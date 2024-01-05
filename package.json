@@ -1,0 +1,11 @@
+{
+  "name": "javascript-datastructures-algorithms-learning",
+  "version": "1.0.0",
+  "description": "Exploring data structures and algorithms with JavaScript. Dive into concise explanations, hands-on coding, and problem-solving strategies to enhance programming skills. Join me on the journey of mastering Data Structure and Algorithm concepts in the world of JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rakib Hasan",
+  "license": "MIT"
+}
