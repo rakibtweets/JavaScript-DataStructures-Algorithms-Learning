@@ -11,7 +11,7 @@ export function binarySearch(sortedArray, target) {
 
   while (left <= right) {
     // Continue the search as long as the left pointer is less than or equal to the right pointer.
-    const mid = Math.floor((left + right) / 2); // Calculate the middle index of the current search space.
+    const mid = left + Math.floor((right - left) / 2); // Calculate the middle index of the current search space. this way of calculating the middle index avoids integer overflow.
 
     if (sortedArray[mid] === target) {
       return mid; // If the target is found at the middle index, return the index.
@@ -27,7 +27,7 @@ export function binarySearch(sortedArray, target) {
 
 // Example usage:
 const sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const targetValue = 11;
+const targetValue = 6;
 const result = binarySearch(sortedArray, targetValue);
 
 if (result !== -1) {
