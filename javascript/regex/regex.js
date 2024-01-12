@@ -142,3 +142,152 @@ let crowd = 'P1P2P3P4P5P6CCCP7P8P9';
 let reCriminals = /C+/;
 let matchedCriminals = crowd.match(reCriminals);
 console.log('matchedCriminals:', matchedCriminals);
+
+// Todo: Match Beginning String Patterns
+let firstString = 'Ricky is first and can be found.';
+let firstRegex = /^Ricky/;
+let notFirst = "You can't find Ricky now.";
+let result16 = firstRegex.test(firstString);
+console.log('result16:', result16);
+result16 = firstRegex.test(notFirst);
+console.log('result16:', result16);
+
+// Todo: Match Ending String Patterns
+let theEnding = 'This is a never ending story';
+let lastRegex = /story$/;
+result16 = lastRegex.test(theEnding);
+console.log('result16:', result16);
+let noEnding = 'Sometimes a story will have to end';
+result16 = lastRegex.test(noEnding);
+console.log('result16:', result16);
+
+// Match All Letters and Numbers
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = '42';
+let varNames = 'important_var';
+console.log(longHand.test(numbers));
+console.log(shortHand.test(numbers));
+console.log(longHand.test(varNames));
+console.log(shortHand.test(varNames));
+console.log(varNames.match(shortHand).length);
+
+shortHand.test(numbers);
+longHand.test(varNames);
+shortHand.test(varNames);
+
+// Todo: Match Everything But Letters and Numbers
+
+let quoteSample3 = 'The five boxing wizards jump quickly.';
+let nonAlphabetRegex = /\W/gi; // or /[^a-z0-9]/gi
+let result17 = quoteSample3.match(nonAlphabetRegex).length;
+console.log('result17:', result17);
+
+// Todo: Match All Numbers
+
+let numString = 'Your sandwich will be $5.00';
+let numRegex = /\d/gi;
+let nonRegex = /\D/gi;
+let result18 = numString.match(numRegex);
+console.log('result18:', result18);
+result18 = numString.match(nonRegex).length;
+console.log('result18:', result18);
+
+// Todo: Restrict Possible Usernames
+
+let userName = 'JackOfAllTrades';
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/gi;
+let userResult = userCheck.test(userName);
+console.log('userResult:', userResult);
+
+// Todo: Match Whitespace
+let whiteSpace = 'Whitespace. Whitespace everywhere!';
+let spaceRegex = /\s/gi;
+let spaceResult = whiteSpace.match(spaceRegex);
+console.log('spaceResult:', spaceResult);
+
+// Todo: Specify Upper and Lower Number of Matches
+
+let a4 = 'aaaah';
+let a2 = 'aah';
+let multipleA = /a{3,5}h/;
+console.log(multipleA.test(a4));
+console.log(multipleA.test(a2));
+
+// other example
+let ohStr = 'Ohhh no';
+let ohRegex = /Oh{3,6}\sno/;
+console.log(ohRegex.test(ohStr));
+
+// Todo: Specify Only the Lower Number of Matches
+let a5 = 'haaaaah';
+let a3 = 'haah';
+let a100 = 'h' + 'a'.repeat(100) + 'h';
+let multipleA2 = /ha{3,}h/i;
+console.log(multipleA2.test(a5));
+console.log(multipleA2.test(a3));
+console.log(multipleA2.test(a100));
+
+// Todo: Specify Exact Number of Matches
+let timStr = 'Timmmmber';
+let timRegex = /Tim{4}ber/i;
+console.log(timRegex.test(timStr));
+
+// Todo: Check for All or None
+let favWord = 'favorite';
+let favRegex = /favou?rite/;
+console.log(favRegex.test(favWord));
+
+// Todo: Positive and Negative Lookahead
+
+let quit = 'qu';
+let noquit = 'qt';
+let quRegex = /q(?=u)/;
+let qRegex = /q(?!u)/;
+console.log(quit.match(quRegex));
+console.log(noquit.match(qRegex));
+
+// another example
+let password = 'abc123';
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+console.log(checkPass.test(password));
+
+// another example 2
+let sampleWord = 'astronaut12';
+let pwRegex = /(?=\w{6})(?=\w*\d{2})/;
+let result19 = pwRegex.test(sampleWord);
+console.log('result19:', result19);
+
+// Todo: Check For Mixed Grouping of Characters
+let testStr1 = 'Pumpkin';
+let textRegex3 = /P(engu|umpk)in/;
+console.log(textRegex3.test(testStr1));
+
+// another example 2
+
+let nameStr = 'Eleanor Roosevelt';
+let nameRegex = /(Franklin|Eleanor).*Roosevelt/;
+let result20 = nameRegex.test(nameStr);
+console.log('result20:', result20);
+
+// Todo: Reuse Patterns Using Capture Groups
+let repeatNum = '42 42 42';
+let reRegex = /^(\d+)\s\1\s\1$/;
+// regex should not match the string 42\t42\t42.
+
+console.log(reRegex.test(repeatNum));
+
+// Todo: Use Capture Groups to Search and Replace
+let wrongText = 'The sky is silver.';
+let silverRegex = /silver/;
+console.log(wrongText.replace(silverRegex, 'blue'));
+
+// another example
+let str = 'one two three';
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/;
+let replaceText = '$3 $2 $1';
+
+// Todo: Remove Whitespace from Start and End
+let hello = '   Hello, World!  ';
+let wsRegex = /^\s+|\s+$/g;
+let result21 = hello.replace(wsRegex, '');
