@@ -1,42 +1,72 @@
 # Array and It's methods
 
-- **What is array data structure** ?
+1. **What is array data structure** ?
 
-  Array is a set of collection of data.The `array` is a object type non premitive data.
-  According to `geeksforgreek`: An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array
+Array is a set of collection of data.The `array` is a object type non premitive data.
+According to `geeksforgreek`: An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array
 
-  ![Array image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726162247/Array-data-structure.png)
+![Array image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726162247/Array-data-structure.png)
 
-  **Creating an Array:**
+- **Creating an Array:**
   Using an array literal is the easiest way to create a JavaScript Array.
 
-  ```javascript
-  const arrayName = [item1, item2, ...];
-  const arrayNumbers = [4, 4,10,5,25,3,...];
+```javascript
+const arrayName = [item1, item2, ...];
+const arrayNumbers = [4, 4,10,5,25,3,...];
 
-  ```
+```
 
-  ### **Access Array elements**
+- ### **Access Array elements**
 
-  ```javascript
-  let ourArray = ['a', 'b', 'c'];
-  let valueAt2ndPosition = ourArray[1];
-  ```
+```javascript
+let ourArray = ['a', 'b', 'c'];
+let valueAt2ndPosition = ourArray[1];
+```
 
-  ### **Add Item to an Array with `push()` and `unshift()`**
+2. ### **Add Item to an Array with `push()` and `unshift()`**
 
-  ```javascript
-  let ourArray = ['a', 'b', 'c'];
-  ourArray.push('d');
-  console.log(ourArray); // ['a', 'b', 'c','d']
-  ```
+```javascript
+let ourArray = ['a', 'b', 'c'];
+ourArray.push('d');
+console.log(ourArray); // ['a', 'b', 'c','d']
+```
 
-  `array.push()` method add item at the end of an array
+`array.push()` method add item at the end of an array
 
-  ```javascript
-  let ourArray = ['b', 'c', 'd'];
-  ourArray.unshift('a');
-  console.log(ourArray); // ['a', 'b', 'c','d']
-  ```
+```javascript
+let ourArray = ['b', 'c', 'd'];
+ourArray.unshift('a');
+console.log(ourArray); // ['a', 'b', 'c','d']
+```
 
-  `array.unshift()` method add item at the start of an array.
+`array.unshift()` method add item at the start of an array.
+
+3. ### **Remove Item form an Array with `pop()` and `shift()`**
+
+```javascript
+let ourArray = ['a', 'b', 'c'];
+ourArray.pop('c');
+console.log(ourArray); // ['a', 'b']
+```
+
+`array.pop()` method remove item from the end of an array
+
+```javascript
+let ourArray = ['b', 'c', 'd'];
+ourArray.shift('b');
+console.log(ourArray); // [ 'c','d']
+```
+
+`array.shift()` method remove item from the start of an array.
+
+4. ### **Remove Items Using `splice()`**
+
+The `splice()` method `adds/removes` items to/from an array, and then returns the removed item. The first argument specifies the array position/index for insertion or deletion whereas the optional second argument indicates the number of elements to be deleted. Each additional argument is added to the array.
+
+```javascript
+let array = ['today', 'was', 'not', 'so', 'great'];
+array.splice(2, 3); // remove 2 elements from index 2
+console.log(spliceEl); // return removed elements ['not', 'so']
+```
+
+**Note:** `array.splice()` method modifies the original array and returns the deleted array.
