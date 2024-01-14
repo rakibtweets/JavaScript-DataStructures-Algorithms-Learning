@@ -47,3 +47,11 @@ const startIndex = 3;
 const amountToDelete = 1;
 numbers.splice(startIndex, amountToDelete, 13, 14);
 console.log(numbers); // return [10, 11, 12, 13, 14, 15]
+
+// Todo:Copy Array Items Using slice()
+
+let arrayIntegers = [1, 2, 3, 4, 5];
+let arraySliceIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]
+let arraySliceIntegers2 = arrayIntegers.slice(2, 3); // returns [3]
+let arraySliceIntegers3 = arrayIntegers.slice(4); // returns [5]
+console.log(arraySliceIntegers1, arraySliceIntegers2, arraySliceIntegers3);
