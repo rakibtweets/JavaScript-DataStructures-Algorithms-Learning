@@ -55,3 +55,47 @@ let arraySliceIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]
 let arraySliceIntegers2 = arrayIntegers.slice(2, 3); // returns [3]
 let arraySliceIntegers3 = arrayIntegers.slice(4); // returns [5]
 console.log(arraySliceIntegers1, arraySliceIntegers2, arraySliceIntegers3);
+
+// Todo: Iterate Through All an Array's Items Using For Loops
+
+const greatherThanTen = (arr) => {
+  let newArr = [];
+  for (let i = 0; arr.length > i; i++) {
+    if (arr[i] > 10) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+};
+
+console.log(greatherThanTen([2, 12, 8, 14, 80, 0, 1]));
+
+function filteredArray(arr, elem) {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const elements = arr[i];
+    if (elements.indexOf(elem) === -1) {
+      newArr.push(elements);
+    }
+  }
+
+  return newArr;
+}
+
+const orginalArray = [
+  [3, 2, 3],
+  [1, 6, 3],
+  [3, 13, 26],
+  [19, 3, 9]
+];
+
+const orginalArray2 = [
+  [10, 8, 3],
+  [14, 6, 23],
+  [3, 18, 6]
+];
+
+const filterArrResult = filteredArray(orginalArray, 18);
+
+console.log(filterArrResult);
