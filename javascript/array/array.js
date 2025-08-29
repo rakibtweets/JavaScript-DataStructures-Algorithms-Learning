@@ -31,14 +31,14 @@ let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];
 const arrayInteger1 = arrayIntegersOriginal1.splice(0, 2);
 console.log(arrayInteger1); // return [1, 2]
 const arrayInteger2 = arrayIntegersOriginal2.splice(1, 3);
-console.log(arrayInteger2); // return [4, 5]
+console.log(arrayInteger2); // return [2,3,4]
 
-console.log('Original2:', arrayIntegersOriginal2);
+console.log('Original2:', arrayIntegersOriginal2); // return [1,5]
 
 // example 3
 const arr1 = [2, 4, 5, 1, 7, 5, 2, 1];
 const newArr = arr1.splice(1, 4);
-console.log(newArr); // return [1, 7, 5, 2]
+console.log(newArr); // return [4,5,1,7]
 console.log(arr1); // return [2, 4, 5, 1]
 
 // Todo: Add Items Using splice()
@@ -99,3 +99,5 @@ const orginalArray2 = [
 const filterArrResult = filteredArray(orginalArray, 18);
 
 console.log(filterArrResult);
+
+// Todo: Create complex multi-dimensional arrays
