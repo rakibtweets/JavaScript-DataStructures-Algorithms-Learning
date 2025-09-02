@@ -17,10 +17,6 @@ function findLowestandHighestFrequencyEl(arr = []) {
   }
 
   for (const [el, count] of hash) {
-    console.log({
-      el,
-      count
-    });
     if (count > maxFreq) {
       maxFreq = count;
       maxEl = el;
