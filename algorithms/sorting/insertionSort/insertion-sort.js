@@ -9,8 +9,8 @@ Insertion Sort Algorithm
 
 */
 
-function insertionSort(arr) {
-  for (let i = 0; i <= arr.length - 1; i++) {
+function insertionSort(arr = []) {
+  for (let i = 1; i <= arr.length - 1; i++) {
     let j = i;
     while (j > 0 && arr[j - 1] > arr[j]) {
       let temp = arr[j];
